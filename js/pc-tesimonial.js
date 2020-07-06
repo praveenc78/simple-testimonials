@@ -1,10 +1,10 @@
 // testimonial script
 
-const slideshow = document.querySelector('.pc-testimonial-wrap');
+const slideshow = document.querySelector('.pc-testimonials-wrap');
 
 if (slideshow != null ) { //make sure we don't run this script if the slideshow is not present
 
-  let slides = document.querySelectorAll('.slide-entry'),
+  let slides = document.querySelectorAll('.testimonial-entry'),
 slideCount = slides.length,
 currentSlide = 0,
 slideHeight = null,
@@ -13,9 +13,9 @@ initialHeight = slides[0].clientHeight;
 slides[0].classList.add('active'); //on load, activate the first slide
 
 function moveToSlide(n) { // set up our slide navigation functionality
-  slides[currentSlide].className = 'slide-entry';
+  slides[currentSlide].className = 'testimonial-entry';
   currentSlide = (n+slideCount)%slideCount;
-  slides[currentSlide].className = 'slide-entry active';
+  slides[currentSlide].className = 'testimonial-entry active';
   slideHeight = slides[currentSlide].clientHeight;
   slideshow.style.height = slideHeight + 'px';
   window.addEventListener('resize', function(){
